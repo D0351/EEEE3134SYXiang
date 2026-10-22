@@ -1,6 +1,8 @@
-# Kevin Xiang — Engineering Portfolio
+# Kevin Xiang — AI Communication Engineering Portfolio
 
 A responsive, dependency-free portfolio webpage designed for GitHub Pages.
+
+The page features Kevin Xiang's portrait and his undergraduate thesis, *Design of a Dual-Band Monopole Antenna for Wi-Fi and Bluetooth Applications*, completed in the AI Communication Engineering program at Zhejiang Gongshang University.
 
 ## Preview locally
 
@@ -16,12 +18,14 @@ Then visit `http://localhost:8080/`.
 
 Edit `main.html` and search for these markers:
 
-- `EDIT:` — replace the experience placeholders and social links.
-- `Electrical & Electronic Engineering · 2026` — update the graduation year.
-- `Ongoing` and `Next` in the Experience section — add real dates, roles, organizations, and outcomes.
+- `EDIT:` — update social links and add future roles as your experience grows.
+- `AI Communication Engineering · Zhejiang Gongshang University` — update the headline if needed.
+- `2022–2026` and `Next` in the Experience section — refine dates and future goals.
 - `https://github.com/` and `https://www.linkedin.com/` — replace with your actual profile URLs.
 
-For stronger project evidence, add a `Selected work` section or replace the capability cards with 2–3 real case studies. Each case study works best with:
+The portrait is stored at `assets/kevin-xiang.jpg`. The original `personal information/` folder is excluded from Git because the thesis filing form contains a student ID and private declarations.
+
+The thesis section currently presents the verified title and program details. For stronger project evidence, add the methods, simulation setup, measurements, and final antenna results from the full thesis. A case study works best with:
 
 1. The problem and why it mattered.
 2. Your specific role and constraints.

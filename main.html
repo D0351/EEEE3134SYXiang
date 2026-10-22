@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3f0e8">
-  <meta name="description" content="Kevin Xiang — electrical and electronic engineering portfolio. Embedded systems, electronics, signal processing, and software tooling.">
+  <meta name="description" content="Kevin Xiang (项斯昱) — AI communication engineering portfolio. Wireless systems, dual-band antenna research, embedded electronics, and signal analysis.">
   <meta property="og:title" content="Kevin Xiang | Engineering Portfolio">
-  <meta property="og:description" content="Engineering ideas into systems that work. Embedded systems, electronics, signals, and software.">
+  <meta property="og:description" content="Engineering ideas into systems that connect. AI communication engineering, wireless antenna research, embedded systems, and signal analysis.">
   <meta property="og:type" content="website">
-  <title>Kevin Xiang | Engineering Portfolio</title>
+  <title>Kevin Xiang | AI Communication Engineering</title>
+  <meta name="author" content="Kevin Xiang (项斯昱)">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/kevin-xiang.jpg">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131410'/%3E%3Cpath d='M16 16h9v13l10-13h11L34 31l13 17H35L25 35v13h-9z' fill='%23f3f0e8'/%3E%3Ccircle cx='50' cy='13' r='4' fill='%23ff5b2e'/%3E%3C/svg%3E">
 
   <style>
@@ -621,24 +623,22 @@
     .scope-core {
       position: relative;
       display: grid;
-      width: 132px;
+      width: 146px;
       aspect-ratio: 1;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(243, 240, 232, 0.28);
       border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.28), transparent 32%),
-        var(--acid);
+      background: var(--paper);
       color: var(--ink);
       box-shadow:
         0 0 0 14px rgba(217, 255, 67, 0.025),
-        0 0 55px rgba(217, 255, 67, 0.14);
+        0 0 55px rgba(217, 255, 67, 0.12);
     }
 
     .scope-core::after {
       position: absolute;
-      width: 172px;
-      height: 172px;
+      width: 186px;
+      height: 186px;
       border: 1px solid rgba(217, 255, 67, 0.28);
       border-radius: 50%;
       content: "";
@@ -650,19 +650,38 @@
       75%, 100% { opacity: 0; transform: scale(1.35); }
     }
 
-    .scope-core strong {
-      font-size: 1.65rem;
-      font-weight: 600;
-      letter-spacing: -0.08em;
-      line-height: 1;
+    .scope-photo {
+      position: absolute;
+      inset: 7px;
+      overflow: hidden;
+      border-radius: 50%;
+      background: #187bb8;
     }
 
-    .scope-core span {
+    .scope-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 28%;
+      filter: saturate(0.88) contrast(1.04);
+    }
+
+    .scope-badge {
       position: absolute;
-      bottom: 34px;
+      right: -7px;
+      bottom: 10px;
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--acid);
+      color: var(--ink);
       font-family: var(--mono);
-      font-size: 0.45rem;
-      letter-spacing: 0.16em;
+      font-size: 0.56rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
     }
 
     .scope-label {
@@ -1166,6 +1185,301 @@
       color: rgba(243, 240, 232, 0.6);
     }
 
+    /* ---------- Thesis ---------- */
+
+    .thesis {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      background: var(--paper-deep);
+    }
+
+    .thesis::before {
+      position: absolute;
+      top: -260px;
+      right: -180px;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(47, 92, 255, 0.12);
+      border-radius: 50%;
+      content: "";
+      box-shadow:
+        0 0 0 80px rgba(47, 92, 255, 0.025),
+        0 0 0 160px rgba(47, 92, 255, 0.018);
+    }
+
+    .thesis .container {
+      position: relative;
+    }
+
+    .thesis .section-title {
+      max-width: 930px;
+    }
+
+    .thesis-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(380px, 0.96fr);
+      overflow: hidden;
+      border: 1px solid rgba(19, 20, 16, 0.16);
+      border-radius: var(--radius-lg);
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0 35px 80px rgba(19, 20, 16, 0.15);
+    }
+
+    .thesis-copy {
+      display: flex;
+      padding: clamp(30px, 4.5vw, 58px);
+      flex-direction: column;
+    }
+
+    .thesis-overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--orange);
+      font-family: var(--mono);
+      font-size: 0.59rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .thesis-overline::before {
+      width: 19px;
+      height: 5px;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+      content: "";
+    }
+
+    .thesis-copy h3 {
+      max-width: 700px;
+      margin-top: 25px;
+      font-size: clamp(2rem, 3.6vw, 3.65rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 1.02;
+    }
+
+    .thesis-summary {
+      max-width: 590px;
+      margin-top: 24px;
+      color: rgba(243, 240, 232, 0.58);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .thesis-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      margin: 34px 0 0;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .thesis-facts div {
+      padding: 17px 15px 15px 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .thesis-facts div:nth-child(even) {
+      padding-left: 18px;
+      border-left: 1px solid var(--line-dark);
+    }
+
+    .thesis-facts dt {
+      margin-bottom: 6px;
+      color: rgba(243, 240, 232, 0.38);
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .thesis-facts dd {
+      margin: 0;
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .thesis-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      padding-top: 28px;
+      color: var(--acid);
+      font-family: var(--mono);
+      font-size: 0.61rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .thesis-link::after {
+      content: "↗";
+      transition: transform 200ms var(--ease);
+    }
+
+    .thesis-link:hover::after {
+      transform: translate(3px, -3px);
+    }
+
+    .thesis-visual {
+      position: relative;
+      display: flex;
+      min-height: 570px;
+      padding: 25px;
+      overflow: hidden;
+      flex-direction: column;
+      border-left: 1px solid var(--line-dark);
+      background:
+        radial-gradient(circle at 56% 38%, rgba(95, 127, 255, 0.26), transparent 34%),
+        #0b1020;
+    }
+
+    .thesis-visual::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 38px 38px;
+      -webkit-mask-image: radial-gradient(circle at 50% 44%, #000, transparent 78%);
+      mask-image: radial-gradient(circle at 50% 44%, #000, transparent 78%);
+    }
+
+    .thesis-figure-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(243, 240, 232, 0.42);
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .thesis-figure-head span:last-child {
+      color: var(--orange);
+    }
+
+    .antenna-plot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      flex: 1;
+      place-items: center;
+    }
+
+    .antenna-plot svg {
+      width: min(100%, 460px);
+      overflow: visible;
+    }
+
+    .antenna-axis {
+      fill: none;
+      stroke: var(--acid);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2.3;
+    }
+
+    .antenna-signal {
+      fill: none;
+      stroke: #84a7ff;
+      stroke-linecap: round;
+      stroke-width: 1.5;
+      stroke-dasharray: 6 9;
+      animation: antenna-flow 7s linear infinite;
+    }
+
+    .antenna-signal--soft {
+      stroke: rgba(255, 91, 46, 0.6);
+      stroke-width: 1.2;
+      animation-direction: reverse;
+    }
+
+    @keyframes antenna-flow {
+      to { stroke-dashoffset: -120; }
+    }
+
+    .plot-tag {
+      position: absolute;
+      z-index: 2;
+      padding: 6px 9px;
+      border: 1px solid rgba(243, 240, 232, 0.16);
+      border-radius: 999px;
+      background: rgba(11, 16, 32, 0.8);
+      color: rgba(243, 240, 232, 0.56);
+      font-family: var(--mono);
+      font-size: 0.47rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .plot-tag--wifi {
+      top: 23%;
+      left: 4%;
+    }
+
+    .plot-tag--bluetooth {
+      top: 47%;
+      right: 1%;
+    }
+
+    .thesis-readout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .thesis-readout div {
+      padding: 15px 8px;
+    }
+
+    .thesis-readout div + div {
+      padding-left: 18px;
+      border-left: 1px solid var(--line-dark);
+    }
+
+    .thesis-readout span {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(243, 240, 232, 0.36);
+      font-family: var(--mono);
+      font-size: 0.45rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .thesis-readout strong {
+      font-family: var(--mono);
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .visual-note {
+      position: relative;
+      z-index: 2;
+      padding-top: 12px;
+      color: rgba(243, 240, 232, 0.28);
+      font-family: var(--mono);
+      font-size: 0.43rem;
+      letter-spacing: 0.06em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
     /* ---------- Experience ---------- */
 
     .experience {
@@ -1624,6 +1938,16 @@
         max-width: 650px;
       }
 
+      .thesis-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .thesis-visual {
+        min-height: 490px;
+        border-top: 1px solid var(--line-dark);
+        border-left: 0;
+      }
+
       .contact-inner {
         grid-template-columns: 1fr;
         gap: 42px;
@@ -1747,6 +2071,11 @@
         padding-left: 0;
       }
 
+      .thesis-visual {
+        min-height: 430px;
+        padding: 20px;
+      }
+
       .contact h2 {
         font-size: clamp(3rem, 14vw, 5rem);
       }
@@ -1775,12 +2104,12 @@
       }
 
       .scope-core {
-        width: 110px;
+        width: 132px;
       }
 
       .scope-core::after {
-        width: 140px;
-        height: 140px;
+        width: 166px;
+        height: 166px;
       }
 
       .scope-label--sense {
@@ -1790,6 +2119,15 @@
       .scope-label--process,
       .scope-label--act {
         right: 0;
+      }
+
+      .thesis-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .thesis-facts div:nth-child(even) {
+        padding-left: 0;
+        border-left: 0;
       }
     }
 
@@ -1829,13 +2167,14 @@
         <span class="brand-mark" aria-hidden="true">KX</span>
         <span class="brand-copy">
           <span class="brand-name">Kevin Xiang</span>
-          <span class="brand-role">Engineering portfolio</span>
+          <span class="brand-role">AI communication engineering</span>
         </span>
       </a>
 
       <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
+        <a href="#thesis">Thesis</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1854,10 +2193,10 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Electrical &amp; Electronic Engineering · 2026</p>
-          <h1>Engineering ideas into <em>systems that work.</em></h1>
+          <p class="eyebrow">AI Communication Engineering · Zhejiang Gongshang University</p>
+          <h1>Engineering ideas into <em>systems that connect.</em></h1>
           <p class="hero-lede">
-            I'm Kevin Xiang. I work where <strong>circuits, code, and real-world constraints</strong> meet — turning technical ideas into clear, testable outcomes.
+            I'm Kevin Xiang, also known as 项斯昱. My work sits where <strong>wireless systems, electronics, and code</strong> meet — turning technical ideas into clear, testable outcomes.
           </p>
 
           <div class="hero-actions">
@@ -1873,7 +2212,7 @@
           <ul class="hero-meta" aria-label="Portfolio overview">
             <li>
               <span>Focus</span>
-              <strong>Embedded + electronics</strong>
+              <strong>Wireless + embedded</strong>
             </li>
             <li>
               <span>Approach</span>
@@ -1900,8 +2239,10 @@
               <span class="scope-label scope-label--process">Process</span>
               <span class="scope-label scope-label--act">Act</span>
               <span class="scope-core">
-                <strong>KX</strong>
-                <span>EEE</span>
+                <span class="scope-photo">
+                  <img src="assets/kevin-xiang.jpg" alt="Portrait of Kevin Xiang" width="990" height="1440">
+                </span>
+                <span class="scope-badge" aria-hidden="true">KX</span>
               </span>
             </div>
 
@@ -1923,16 +2264,16 @@
       <div class="marquee-track">
         <div class="marquee-group">
           <span>Embedded systems</span><b>✦</b>
-          <span>Circuit design</span><b>✦</b>
-          <span>Signal processing</span><b>✦</b>
-          <span>Software tooling</span><b>✦</b>
+          <span>Wireless communication</span><b>✦</b>
+          <span>Antenna design</span><b>✦</b>
+          <span>Signal analysis</span><b>✦</b>
           <span>Systems thinking</span><b>✦</b>
         </div>
         <div class="marquee-group">
           <span>Embedded systems</span><b>✦</b>
-          <span>Circuit design</span><b>✦</b>
-          <span>Signal processing</span><b>✦</b>
-          <span>Software tooling</span><b>✦</b>
+          <span>Wireless communication</span><b>✦</b>
+          <span>Antenna design</span><b>✦</b>
+          <span>Signal analysis</span><b>✦</b>
           <span>Systems thinking</span><b>✦</b>
         </div>
       </div>
@@ -1955,17 +2296,17 @@
             </p>
             <div class="about-body">
               <p>
-                My interests sit where circuits meet software: sensing a physical signal, making a decision under real constraints, and producing an output that is useful in the real world.
+                My background is in AI communication engineering at Zhejiang Gongshang University, where I’ve worked across wireless systems, electronics, and software. I’m most interested in the point where a physical signal becomes a useful, reliable system.
               </p>
               <p>
-                As an electrical and electronic engineering student, I’m building depth across embedded systems, electronics, signals, and software. I value clear assumptions, honest measurements, and documentation that makes the next iteration easier.
+                My undergraduate thesis focused on a dual-band monopole antenna for Wi-Fi and Bluetooth applications. That work sharpened my interest in communication systems, antenna design, and the engineering decisions that connect simulation and theory to a practical wireless device.
               </p>
             </div>
             <div class="about-signature">
               <span class="signature-mark" aria-hidden="true">KX</span>
               <span class="signature-copy">
                 <strong>Kevin Xiang</strong>
-                <span>Engineer in progress · systems thinker</span>
+                <span>AI Communication Engineering · Wireless systems</span>
               </span>
             </div>
           </div>
@@ -2006,7 +2347,7 @@
         <div class="section-head reveal">
           <div>
             <p class="section-label"><span>02</span> Expertise</p>
-            <h2 class="section-title">A broad engineering base. A bias toward execution.</h2>
+            <h2 class="section-title">A communication-first engineering base. A bias toward execution.</h2>
           </div>
           <p class="section-note">Four connected areas I use to take an idea from a specification to a system that can be demonstrated.</p>
         </div>
@@ -2059,45 +2400,117 @@
 
           <article class="expertise-card reveal">
             <div class="expertise-top">
-              <span class="index">03 / Signals</span>
-              <span>Signal → insight</span>
+              <span class="index">03 / Wireless</span>
+              <span>Antenna → connection</span>
             </div>
             <span class="expertise-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
-                <path d="M2 12h3l2-6 3 12 3-9 2 6 2-3h5"/>
-                <path d="M2 4v16M22 4v16"/>
+                <path d="M12 20V9"/>
+                <path d="M8 13a5.7 5.7 0 0 1 8 0M5.5 10a9.2 9.2 0 0 1 13 0M3 7a13 13 0 0 1 18 0"/>
+                <path d="M7 21h10"/>
               </svg>
             </span>
-            <h3>Signal chains that separate meaning from noise.</h3>
-            <p>Approaching measurements as systems: sampling, filtering, modelling, and visualising data so that a conclusion can be traced back to evidence.</p>
-            <div class="tags" aria-label="Signal processing tools">
-              <span>MATLAB</span>
-              <span>Python</span>
-              <span>DSP fundamentals</span>
-              <span>Data visualisation</span>
+            <h3>Wireless systems, starting from the antenna.</h3>
+            <p>Exploring how radiating structures, frequency behavior, and practical device requirements come together. My thesis examined a dual-band monopole antenna for Wi-Fi and Bluetooth.</p>
+            <div class="tags" aria-label="Wireless expertise">
+              <span>RF fundamentals</span>
+              <span>Antenna design</span>
+              <span>Wi-Fi / Bluetooth</span>
+              <span>Wireless communication</span>
             </div>
           </article>
 
           <article class="expertise-card reveal">
             <div class="expertise-top">
-              <span class="index">04 / Software</span>
-              <span>Repeatable by design</span>
+              <span class="index">04 / Signals + code</span>
+              <span>Measure → understand</span>
             </div>
             <span class="expertise-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
-                <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>
+                <path d="M2 12h3l2-6 3 12 3-9 2 6 2-3h5"/>
+                <path d="m17 19 4 2-4 2"/>
               </svg>
             </span>
-            <h3>Software as an engineering instrument.</h3>
-            <p>Using scripts and tools to automate repetitive work, process measurements, reproduce tests, and make complex systems easier to understand and operate.</p>
-            <div class="tags" aria-label="Software tools">
+            <h3>Signal analysis and software as engineering instruments.</h3>
+            <p>Using code to process measurements, automate repetitive work, visualise results, and make technical decisions easier to explain and reproduce.</p>
+            <div class="tags" aria-label="Signal and software tools">
+              <span>Signal analysis</span>
               <span>Python</span>
+              <span>MATLAB</span>
               <span>Git</span>
-              <span>Linux</span>
-              <span>Automation</span>
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section thesis" id="thesis">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label"><span>03</span> Undergraduate thesis</p>
+            <h2 class="section-title">Designing a dual-band antenna for connected devices.</h2>
+          </div>
+          <p class="section-note">Wireless communication, electromagnetic design, and the practical constraints behind a compact antenna.</p>
+        </div>
+
+        <article class="thesis-feature reveal">
+          <div class="thesis-copy">
+            <p class="thesis-overline">Undergraduate thesis · 2026</p>
+            <h3>Design of a Dual-Band Monopole Antenna for Wi-Fi and Bluetooth Applications</h3>
+            <p class="thesis-summary">
+              My undergraduate research addressed a dual-band monopole antenna for two common short-range wireless applications. The project brought together antenna fundamentals, frequency behavior, and design trade-offs for connected devices.
+            </p>
+
+            <dl class="thesis-facts">
+              <div>
+                <dt>Institution</dt>
+                <dd>Zhejiang Gongshang University</dd>
+              </div>
+              <div>
+                <dt>Program</dt>
+                <dd>AI Communication Engineering</dd>
+              </div>
+              <div>
+                <dt>Research area</dt>
+                <dd>Antennas &amp; wireless systems</dd>
+              </div>
+              <div>
+                <dt>Applications</dt>
+                <dd>Wi-Fi &amp; Bluetooth</dd>
+              </div>
+            </dl>
+
+            <a class="thesis-link" href="mailto:siyuxiang57@163.com?subject=Undergraduate%20thesis%20research">Discuss the research</a>
+          </div>
+
+          <div class="thesis-visual" aria-label="Conceptual illustration of a dual-band monopole antenna">
+            <div class="thesis-figure-head">
+              <span>Antenna concept / dual band</span>
+              <span>Fig. 01</span>
+            </div>
+
+            <div class="antenna-plot" aria-hidden="true">
+              <span class="plot-tag plot-tag--wifi">Wi-Fi application</span>
+              <span class="plot-tag plot-tag--bluetooth">Bluetooth application</span>
+              <svg viewBox="0 0 460 380">
+                <path class="antenna-axis" d="M230 322V92M230 322h-52M230 322h52M230 92h-20M230 92h20"/>
+                <path class="antenna-signal" d="M165 122c-36 35-36 99 0 134M295 122c36 35 36 99 0 134"/>
+                <path class="antenna-signal antenna-signal--soft" d="M119 87c-61 59-61 165 0 224M341 87c61 59 61 165 0 224"/>
+                <path class="antenna-signal" d="M161 265c-19 13-34 31-44 52M299 265c19 13 34 31 44 52"/>
+                <circle cx="230" cy="92" r="7" fill="#d9ff43"/>
+                <circle cx="230" cy="322" r="5" fill="#ff5b2e"/>
+                <path d="M67 322h326" stroke="rgba(243,240,232,.22)" stroke-dasharray="3 8"/>
+              </svg>
+            </div>
+
+            <div class="thesis-readout">
+              <div><span>Research focus</span><strong>DUAL-BAND MONOPOLE</strong></div>
+              <div><span>Application space</span><strong>SHORT-RANGE WIRELESS</strong></div>
+            </div>
+            <p class="visual-note">Conceptual illustration · not measured data</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -2105,47 +2518,44 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="section-label"><span>03</span> Experience &amp; direction</p>
+            <p class="section-label"><span>04</span> Experience &amp; direction</p>
             <h2 class="section-title">Learning by building. Getting better by measuring.</h2>
           </div>
           <p class="section-note">A concise view of where I am now and the kind of work I want to do next.</p>
         </div>
 
         <div class="experience-list">
-          <!-- EDIT: Replace "Now" with your dates, title, context, and concrete outcomes. -->
           <article class="experience-item reveal">
-            <p class="experience-period">Now</p>
+            <p class="experience-period">2026</p>
             <div class="experience-role">
-              <h3>Building a public engineering portfolio</h3>
-              <p>Turning the way I think about hardware, software, and systems into a clear record of ideas, decisions, and work in progress.</p>
+              <h3>Undergraduate thesis · dual-band antenna design</h3>
+              <p>Completed a wireless engineering project focused on a dual-band monopole antenna for Wi-Fi and Bluetooth applications.</p>
             </div>
             <div class="experience-tags" aria-label="Focus areas">
-              <span>Systems thinking</span>
-              <span>Technical communication</span>
-              <span>Web</span>
+              <span>Antenna design</span>
+              <span>Wireless systems</span>
+              <span>Technical research</span>
             </div>
           </article>
 
-          <!-- EDIT: Add your university, dates, degree, and relevant coursework. -->
           <article class="experience-item reveal">
-            <p class="experience-period">Ongoing</p>
+            <p class="experience-period">2022–2026</p>
             <div class="experience-role">
-              <h3>Electrical &amp; electronic engineering studies</h3>
-              <p>Developing a foundation through coursework, labs, and self-directed technical work, with an emphasis on connecting theory to practical systems.</p>
+              <h3>AI Communication Engineering · Zhejiang Gongshang University</h3>
+              <p>Built a foundation across communication systems, electronics, signals, and software through coursework, labs, and project work.</p>
             </div>
             <div class="experience-tags" aria-label="Study areas">
-              <span>Circuits</span>
-              <span>Signals</span>
-              <span>Embedded design</span>
+              <span>Communication systems</span>
+              <span>Electronics</span>
+              <span>Signal analysis</span>
             </div>
           </article>
 
-          <!-- EDIT: Replace this card with an internship, project team, research role, or competition. -->
           <article class="experience-item reveal">
             <p class="experience-period">Next</p>
             <div class="experience-role">
               <h3>Open to hands-on engineering work</h3>
-              <p>Looking for teams where careful engineering, clear communication, and iterative problem-solving matter. This slot is ready for your next role or project.</p>
+              <p>Looking for teams where careful engineering, clear communication, and iterative problem-solving matter across wireless, embedded, or communication systems.</p>
             </div>
             <div class="experience-tags" aria-label="Opportunity types">
               <span>Internships</span>
@@ -2160,10 +2570,10 @@
     <section class="contact" id="contact">
       <div class="container contact-inner">
         <div class="reveal">
-          <p class="contact-label">04 / Contact</p>
+          <p class="contact-label">05 / Contact</p>
           <h2>Let’s make something that works.</h2>
           <p class="contact-copy">
-            If you’re working on an interesting hardware, embedded, or systems problem — or have an opportunity worth discussing — I’d be glad to hear about it.
+            If you’re working on an interesting wireless, hardware, or communication systems problem — or have an opportunity worth discussing — I’d be glad to hear about it.
           </p>
         </div>
 
