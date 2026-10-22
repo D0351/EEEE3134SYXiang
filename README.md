@@ -6,7 +6,7 @@ The page features Siyu Xiang's portrait and his undergraduate thesis, *Design of
 
 ## Preview locally
 
-Open `main.html` in a browser, or run a local server:
+Open `ai-generated-page.html` in a browser, or run a local server:
 
 ```powershell
 python -m http.server 8080
@@ -16,7 +16,7 @@ Then visit `http://localhost:8080/`.
 
 ## Personalize before publishing
 
-Edit `main.html` and search for these markers:
+Edit `ai-generated-page.html` and search for these markers:
 
 - `EDIT:` — update social links and add future roles as your experience grows.
 - `AI Communication Engineering · Zhejiang Gongshang University` — update the headline if needed.
@@ -48,4 +48,4 @@ The thesis section currently presents the verified title and program details. Fo
 4. Select the `main` branch and the `/ (root)` folder, then save.
 5. The site appears at `https://<your-github-username>.github.io/<repository-name>/`.
 
-`index.html` forwards visitors to `main.html`, which contains the complete site.
+`index.html` forwards visitors to `ai-generated-page.html`, which contains the complete site.
