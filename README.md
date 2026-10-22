@@ -43,7 +43,9 @@ The thesis section currently presents the verified title and program details. Fo
 ### Option B — project site
 
 1. Create any repository and push this folder’s contents to `main`.
-2. The included GitHub Actions workflow enables Pages and deploys the site after each push to `main`.
-3. The site appears at `https://<your-github-username>.github.io/<repository-name>/`.
+2. In the repository, open **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the `main` branch and the `/ (root)` folder, then save.
+5. The site appears at `https://<your-github-username>.github.io/<repository-name>/`.
 
 `index.html` forwards visitors to `main.html`, which contains the complete site.
