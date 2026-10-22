@@ -1,8 +1,8 @@
-# Kevin Xiang — AI Communication Engineering Portfolio
+# Siyu Xiang — AI Communication Engineering Portfolio
 
 A responsive, dependency-free portfolio webpage designed for GitHub Pages.
 
-The page features Kevin Xiang's portrait and his undergraduate thesis, *Design of a Dual-Band Monopole Antenna for Wi-Fi and Bluetooth Applications*, completed in the AI Communication Engineering program at Zhejiang Gongshang University.
+The page features Siyu Xiang's portrait and his undergraduate thesis, *Design of a Dual-Band Monopole Antenna for Wi-Fi and Bluetooth Applications*, completed in the AI Communication Engineering program at Zhejiang Gongshang University.
 
 ## Preview locally
 
@@ -23,7 +23,7 @@ Edit `main.html` and search for these markers:
 - `2022–2026` and `Next` in the Experience section — refine dates and future goals.
 - `https://github.com/` and `https://www.linkedin.com/` — replace with your actual profile URLs.
 
-The portrait is stored at `assets/kevin-xiang.jpg`. The original `personal information/` folder is excluded from Git because the thesis filing form contains a student ID and private declarations.
+The portrait is stored at `assets/siyu-xiang.jpg`. The original `personal information/` folder is excluded from Git because the thesis filing form contains a student ID and private declarations.
 
 The thesis section currently presents the verified title and program details. For stronger project evidence, add the methods, simulation setup, measurements, and final antenna results from the full thesis. A case study works best with:
 
