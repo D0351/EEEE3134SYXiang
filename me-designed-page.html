@@ -1,0 +1,1365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ef">
+  <meta name="description" content="Siyu Xiang — personal webpage covering education, embedded development, communication engineering, and dual-band antenna design.">
+  <meta name="author" content="Siyu Xiang">
+  <title>Siyu Xiang | Personal Page</title>
+  <link rel="canonical" href="./me-designed-page.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23302c27'/%3E%3Ctext x='32' y='42' text-anchor='middle' fill='%23f8f6f2' font-family='Times New Roman, serif' font-size='25' font-weight='700'%3ESX%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --white: #fff;
+      --page: #f5f3ef;
+      --paper: #fbfaf8;
+      --warm: #eee7dc;
+      --warm-deep: #d8cbbb;
+      --brown: #8b7865;
+      --brown-dark: #51463b;
+      --ink: #24211e;
+      --muted: #65605b;
+      --border: #d8d5d0;
+      --border-soft: #e8e5e0;
+      --max-width: 920px;
+      --serif: "Times New Roman", Times, serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    dl,
+    dd,
+    ol {
+      margin: 0;
+    }
+
+    ol {
+      padding: 0;
+      list-style: none;
+    }
+
+    ::selection {
+      background: var(--warm-deep);
+      color: var(--ink);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brown-dark);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 10px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--white);
+      transform: translateY(-150%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 7px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      left: 0;
+      height: 1px;
+      background: var(--brown);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Main profile */
+
+    main {
+      padding: 38px 0 0;
+    }
+
+    .profile-card,
+    .contents-card,
+    .section-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .profile-card {
+      overflow: hidden;
+    }
+
+    .profile-main {
+      display: grid;
+      grid-template-columns: 136px minmax(0, 1fr);
+      gap: 30px;
+      padding: 38px 40px 32px;
+      align-items: center;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: 136px;
+      margin: 0;
+      aspect-ratio: 11 / 14;
+      overflow: hidden;
+      border: 1px solid var(--warm-deep);
+      border-radius: 7px;
+      background: var(--warm);
+      box-shadow: 0 7px 18px rgba(51, 43, 35, 0.09);
+    }
+
+    .portrait-frame::after {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: inherit;
+      content: "";
+      pointer-events: none;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 24%;
+    }
+
+    .eyebrow {
+      color: var(--brown);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .profile-copy h1 {
+      margin-top: 8px;
+      font-size: clamp(2.7rem, 6vw, 4.35rem);
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      line-height: 0.96;
+    }
+
+    .profile-role {
+      max-width: 620px;
+      margin-top: 14px;
+      color: var(--brown-dark);
+      font-size: clamp(1.12rem, 2.2vw, 1.38rem);
+      line-height: 1.35;
+    }
+
+    .profile-institution {
+      max-width: 650px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .profile-summary {
+      max-width: 740px;
+      padding: 0 40px 33px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--border-soft);
+      background: #fcfbf9;
+    }
+
+    .quick-facts div {
+      padding: 16px 40px 17px;
+    }
+
+    .quick-facts div:nth-child(odd) {
+      border-right: 1px solid var(--border-soft);
+    }
+
+    .quick-facts div:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .quick-facts dt {
+      color: var(--brown);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .quick-facts dd {
+      margin-top: 4px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Contents */
+
+    .contents-card {
+      margin-top: 22px;
+      padding: 28px 32px 26px;
+      background: var(--paper);
+    }
+
+    .contents-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .contents-head h2 {
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .contents-head span {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contents-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contents-list li:nth-child(odd) {
+      border-right: 1px solid var(--border-soft);
+    }
+
+    .contents-list li:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .contents-list a {
+      display: flex;
+      min-height: 57px;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 18px;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .contents-list li:nth-child(odd) a {
+      padding-left: 4px;
+    }
+
+    .contents-list a:hover,
+    .contents-list a.is-current {
+      background: var(--warm);
+      color: var(--brown-dark);
+    }
+
+    .contents-list b {
+      min-width: 24px;
+      color: var(--brown);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .contents-list strong {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    /* Sections */
+
+    .section-card {
+      margin-top: 22px;
+      padding: 38px 40px 42px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.7rem, 3.8vw, 2.25rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+
+    .section-heading span {
+      color: var(--brown);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .section-content {
+      padding-top: 24px;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: 20px;
+      line-height: 1.65;
+    }
+
+    .body-copy {
+      display: grid;
+      gap: 15px;
+      max-width: 760px;
+      margin-top: 20px;
+      color: var(--muted);
+    }
+
+    .fact-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+      background: #fcfbf9;
+    }
+
+    .fact-strip div {
+      padding: 15px 17px;
+    }
+
+    .fact-strip div + div {
+      border-left: 1px solid var(--border-soft);
+    }
+
+    .fact-strip span {
+      display: block;
+      color: var(--brown);
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .fact-strip strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    /* Education */
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr);
+      gap: 25px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .timeline-item:first-child {
+      padding-top: 0;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .timeline-label {
+      color: var(--brown);
+      font-size: 13px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .timeline-content h3 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .timeline-content p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* Project */
+
+    .project-panel {
+      overflow: hidden;
+      border: 1px solid var(--warm-deep);
+      border-radius: 7px;
+      background: linear-gradient(135deg, #fbfaf7, #f3eee7);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 30px 22px;
+      border-bottom: 1px solid var(--warm-deep);
+    }
+
+    .project-top h3 {
+      max-width: 650px;
+      font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .project-tag {
+      padding: 5px 10px;
+      border: 1px solid var(--warm-deep);
+      border-radius: 999px;
+      color: var(--brown-dark);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .project-body {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .project-description {
+      padding: 26px 30px 30px;
+    }
+
+    .project-description p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .project-description ul {
+      display: grid;
+      gap: 8px;
+      margin: 17px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-description li {
+      position: relative;
+      padding-left: 17px;
+      font-size: 15px;
+    }
+
+    .project-description li::before {
+      position: absolute;
+      top: 0.72em;
+      left: 0;
+      width: 6px;
+      height: 1px;
+      background: var(--brown);
+      content: "";
+    }
+
+    .frequency-panel {
+      display: flex;
+      min-height: 280px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px;
+      border-left: 1px solid var(--warm-deep);
+      background:
+        linear-gradient(to right, rgba(81, 70, 59, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(81, 70, 59, 0.045) 1px, transparent 1px),
+        rgba(255, 255, 255, 0.34);
+      background-size: 32px 32px;
+    }
+
+    .frequency-title {
+      color: var(--brown);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .frequency-line {
+      position: relative;
+      height: 72px;
+      margin: 26px 0 19px;
+      border-bottom: 1px solid var(--brown);
+    }
+
+    .frequency-line::before,
+    .frequency-line::after {
+      position: absolute;
+      bottom: -5px;
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--brown);
+      border-radius: 50%;
+      background: var(--paper);
+      content: "";
+    }
+
+    .frequency-line::before {
+      left: 19%;
+    }
+
+    .frequency-line::after {
+      right: 19%;
+    }
+
+    .frequency-line span {
+      position: absolute;
+      bottom: 18px;
+      display: block;
+      border: 1px solid var(--warm-deep);
+      border-bottom: 0;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .frequency-line span:first-child {
+      left: 11%;
+      width: 27%;
+      height: 38px;
+    }
+
+    .frequency-line span:last-child {
+      right: 11%;
+      width: 26%;
+      height: 57px;
+    }
+
+    .frequency-values {
+      display: flex;
+      justify-content: space-around;
+      font-size: 19px;
+    }
+
+    .frequency-values span {
+      display: grid;
+      gap: 1px;
+      text-align: center;
+    }
+
+    .frequency-values small {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Skills */
+
+    .skills-list {
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 30px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .skill-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .skill-row h3 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .skill-row p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 9px;
+    }
+
+    .skill-tags span {
+      padding: 3px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--brown-dark);
+      font-size: 12px;
+    }
+
+    /* Contact */
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      padding: 26px 0 0;
+    }
+
+    .contact-panel p {
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+    }
+
+    .email-link {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      padding: 8px 15px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--paper);
+      font-size: 16px;
+      transition: border-color 160ms ease, background-color 160ms ease;
+    }
+
+    .email-link:hover {
+      border-color: var(--brown);
+      background: var(--warm);
+    }
+
+    .copy-email {
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .copy-email:hover {
+      border-color: var(--brown);
+      color: var(--ink);
+    }
+
+    .repository-link {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .repository-link a {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .repository-link a:hover {
+      border-color: var(--brown);
+      color: var(--ink);
+    }
+
+    /* Footer */
+
+    .page-footer {
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .back-to-top {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .back-to-top:hover {
+      border-color: var(--brown);
+      color: var(--ink);
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 50;
+      right: 20px;
+      bottom: 20px;
+      padding: 10px 14px;
+      border: 1px solid var(--brown-dark);
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 720px) {
+      html {
+        scroll-padding-top: 78px;
+      }
+
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .header-inner {
+        min-height: 58px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
+
+      main {
+        padding-top: 22px;
+      }
+
+      .profile-main {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 20px;
+        padding: 26px 24px 24px;
+      }
+
+      .portrait-frame {
+        width: 96px;
+      }
+
+      .profile-copy h1 {
+        font-size: clamp(2.35rem, 12vw, 3.3rem);
+      }
+
+      .profile-role {
+        margin-top: 10px;
+        font-size: 1.05rem;
+      }
+
+      .profile-institution {
+        font-size: 14px;
+      }
+
+      .profile-summary {
+        padding: 0 24px 26px;
+        font-size: 16px;
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-facts div {
+        padding: 13px 24px;
+      }
+
+      .quick-facts div:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .quick-facts div:not(:last-child) {
+        border-bottom: 1px solid var(--border-soft);
+      }
+
+      .contents-card {
+        padding: 23px 24px;
+      }
+
+      .contents-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contents-list li:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .contents-list li:not(:last-child) {
+        border-bottom: 1px solid var(--border-soft);
+      }
+
+      .contents-list li:nth-child(odd) a {
+        padding-left: 7px;
+      }
+
+      .section-card {
+        padding: 28px 24px 32px;
+        scroll-margin-top: 72px;
+      }
+
+      .section-heading {
+        gap: 14px;
+      }
+
+      .section-heading span {
+        font-size: 10px;
+      }
+
+      .fact-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .fact-strip div + div {
+        border-top: 1px solid var(--border-soft);
+        border-left: 0;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .project-top {
+        display: block;
+        padding: 23px 24px 18px;
+      }
+
+      .project-tag {
+        display: inline-block;
+        margin-top: 13px;
+      }
+
+      .project-body {
+        grid-template-columns: 1fr;
+      }
+
+      .project-description {
+        padding: 23px 24px 26px;
+      }
+
+      .frequency-panel {
+        min-height: 230px;
+        padding: 24px;
+        border-top: 1px solid var(--warm-deep);
+        border-left: 0;
+      }
+
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-actions {
+        justify-items: start;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .profile-main {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .portrait-frame {
+        width: 104px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .nav-links a:nth-child(4) {
+        display: none;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading span {
+        display: block;
+        margin-top: 7px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Siyu Xiang, back to top">
+        <span class="brand-mark" aria-hidden="true">SX</span>
+        <span class="brand-name">Siyu Xiang</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#project">Project</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="profile-card" id="top" aria-labelledby="profile-name">
+        <div class="profile-main">
+          <figure class="portrait-frame">
+            <img src="assets/siyu-xiang.jpg" alt="Portrait of Siyu Xiang" width="990" height="1440">
+          </figure>
+          <div class="profile-copy">
+            <p class="eyebrow">Personal webpage</p>
+            <h1 id="profile-name">Siyu Xiang</h1>
+            <p class="profile-role">Undergraduate in Electronic Communications and Computer Engineering</p>
+            <p class="profile-institution">University of Nottingham Ningbo China · Communication Engineering at Zhejiang Gongshang University</p>
+          </div>
+        </div>
+
+        <p class="profile-summary">
+          I am an engineering student interested in the connection between software, embedded hardware, and wireless communication. My current work focuses on practical electronic systems, with a particular interest in antenna design and communication technologies.
+        </p>
+
+        <dl class="quick-facts">
+          <div>
+            <dt>Focus</dt>
+            <dd>Wireless communication and embedded systems</dd>
+          </div>
+          <div>
+            <dt>Core skills</dt>
+            <dd>C programming and embedded development</dd>
+          </div>
+          <div>
+            <dt>Graduation project</dt>
+            <dd>Dual-band antenna design at 2.4 GHz and 5 GHz</dd>
+          </div>
+          <div>
+            <dt>Contact</dt>
+            <dd><a href="mailto:siyuxiang57@163.com">siyuxiang57@163.com</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <nav class="contents-card" aria-labelledby="contents-title">
+        <div class="contents-head">
+          <h2 id="contents-title">Contents</h2>
+          <span>On this page</span>
+        </div>
+        <ol class="contents-list">
+          <li><a href="#about"><b>01</b><strong>About me</strong></a></li>
+          <li><a href="#education"><b>02</b><strong>Education</strong></a></li>
+          <li><a href="#project"><b>03</b><strong>Graduation project</strong></a></li>
+          <li><a href="#skills"><b>04</b><strong>Skills &amp; expertise</strong></a></li>
+          <li><a href="#contact"><b>05</b><strong>Contact</strong></a></li>
+        </ol>
+      </nav>
+
+      <section class="section-card" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <h2 id="about-title">About me</h2>
+          <span>01 / Introduction</span>
+        </div>
+        <div class="section-content">
+          <p class="lead">
+            I am an undergraduate engineering student building a foundation across electronic communications, computer engineering, and embedded systems.
+          </p>
+          <div class="body-copy">
+            <p>
+              My studies combine electronic communications and computer engineering at the University of Nottingham Ningbo China with communication engineering study at Zhejiang Gongshang University. This background gives me a broad view of both the hardware and software sides of connected systems.
+            </p>
+            <p>
+              I am especially interested in wireless technologies, antenna design, and embedded development. I enjoy understanding how a technical idea moves from a design concept into a working system, and I value clear thinking, careful implementation, and practical results.
+            </p>
+          </div>
+          <div class="fact-strip" aria-label="Profile summary">
+            <div>
+              <span>Primary interest</span>
+              <strong>Wireless systems</strong>
+            </div>
+            <div>
+              <span>Programming</span>
+              <strong>C language</strong>
+            </div>
+            <div>
+              <span>Hardware</span>
+              <strong>Embedded development</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="education" aria-labelledby="education-title">
+        <div class="section-heading">
+          <h2 id="education-title">Education</h2>
+          <span>02 / Academic background</span>
+        </div>
+        <div class="section-content timeline">
+          <article class="timeline-item">
+            <p class="timeline-label">Undergraduate</p>
+            <div class="timeline-content">
+              <h3>Electronic Communications and Computer Engineering</h3>
+              <p>University of Nottingham Ningbo China</p>
+              <p>Study across electronic communication systems, computer engineering, embedded technology, and software fundamentals.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-label">Communication Engineering</p>
+            <div class="timeline-content">
+              <h3>Zhejiang Gongshang University</h3>
+              <p>Communication Engineering</p>
+              <p>Academic development focused on communication systems, electronic principles, and wireless engineering applications.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card" id="project" aria-labelledby="project-title">
+        <div class="section-heading">
+          <h2 id="project-title">Graduation project</h2>
+          <span>03 / Selected work</span>
+        </div>
+        <div class="section-content">
+          <article class="project-panel">
+            <div class="project-top">
+              <h3>Design of a dual-band antenna for 2.4 GHz and 5 GHz applications</h3>
+              <span class="project-tag">Antenna design</span>
+            </div>
+            <div class="project-body">
+              <div class="project-description">
+                <p>
+                  My undergraduate graduation project focuses on the design of a dual-band antenna operating at 2.4 GHz and 5 GHz. The project connects communication engineering principles with the practical design of a wireless component.
+                </p>
+                <ul>
+                  <li>Dual-band operation for common wireless frequency ranges</li>
+                  <li>Antenna design within a communication engineering context</li>
+                  <li>Attention to frequency behavior and practical device requirements</li>
+                </ul>
+              </div>
+              <div class="frequency-panel" aria-label="Project frequency bands">
+                <p class="frequency-title">Design frequency bands</p>
+                <div class="frequency-line" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="frequency-values">
+                  <span><strong>2.4 GHz</strong><small>Lower band</small></span>
+                  <span><strong>5 GHz</strong><small>Upper band</small></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <h2 id="skills-title">Skills &amp; expertise</h2>
+          <span>04 / Capabilities</span>
+        </div>
+        <div class="section-content skills-list">
+          <article class="skill-row">
+            <h3>C programming</h3>
+            <div>
+              <p>Writing structured C programs and developing the programming foundation required for embedded and computer engineering work.</p>
+              <div class="skill-tags"><span>C</span><span>Programming</span><span>Debugging</span></div>
+            </div>
+          </article>
+          <article class="skill-row">
+            <h3>Embedded development</h3>
+            <div>
+              <p>Working with embedded systems and understanding the relationship between software logic and electronic hardware.</p>
+              <div class="skill-tags"><span>Embedded systems</span><span>Hardware integration</span></div>
+            </div>
+          </article>
+          <article class="skill-row">
+            <h3>Communication engineering</h3>
+            <div>
+              <p>Building knowledge of communication systems, electronic communication principles, and wireless technology.</p>
+              <div class="skill-tags"><span>Communications</span><span>Wireless systems</span></div>
+            </div>
+          </article>
+          <article class="skill-row">
+            <h3>Antenna design</h3>
+            <div>
+              <p>Applying communication engineering concepts to the design of a dual-band antenna for 2.4 GHz and 5 GHz operation.</p>
+              <div class="skill-tags"><span>Antenna design</span><span>2.4 GHz</span><span>5 GHz</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <h2 id="contact-title">Contact</h2>
+          <span>05 / Get in touch</span>
+        </div>
+        <div class="section-content">
+          <div class="contact-panel">
+            <p>
+              I am happy to connect about communication engineering, embedded development, antenna design, or other engineering opportunities.
+            </p>
+            <div class="contact-actions">
+              <a class="email-link" href="mailto:siyuxiang57@163.com">siyuxiang57@163.com</a>
+              <button class="copy-email" type="button" data-email="siyuxiang57@163.com">Copy email address</button>
+            </div>
+          </div>
+          <p class="repository-link">View the <a href="https://github.com/D0351/EEEE3134SYXiang">GitHub repository</a> for this page.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year">2026</span> Siyu Xiang · Personal webpage</p>
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite">Email copied to clipboard</div>
+
+  <script>
+    (() => {
+      const copyButton = document.querySelector(".copy-email");
+      const toast = document.querySelector(".toast");
+      const contentsLinks = [...document.querySelectorAll(".contents-list a")];
+      const sections = contentsLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+      const yearTarget = document.querySelector("#current-year");
+      let toastTimer;
+
+      yearTarget.textContent = String(new Date().getFullYear());
+
+      const showToast = (message) => {
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 2200);
+      };
+
+      const fallbackCopy = (email) => {
+        const input = document.createElement("textarea");
+        input.value = email;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        const copied = document.execCommand("copy");
+        input.remove();
+        return copied;
+      };
+
+      copyButton.addEventListener("click", async () => {
+        const email = copyButton.dataset.email;
+
+        try {
+          await navigator.clipboard.writeText(email);
+          showToast("Email copied to clipboard");
+        } catch (error) {
+          const copied = fallbackCopy(email);
+          showToast(copied ? "Email copied to clipboard" : "Copy failed — please select the email");
+        }
+      });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            contentsLinks.forEach((link) => {
+              link.classList.toggle(
+                "is-current",
+                link.getAttribute("href") === `#${entry.target.id}`
+              );
+            });
+          });
+        }, {
+          rootMargin: "-20% 0px -65% 0px",
+          threshold: 0
+        });
+
+        sections.forEach((section) => observer.observe(section));
+      }
+    })();
+  </script>
+</body>
+</html>

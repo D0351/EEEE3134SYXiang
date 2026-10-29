@@ -4,6 +4,10 @@ A responsive, dependency-free portfolio webpage designed for GitHub Pages.
 
 The page features Siyu Xiang's portrait and his undergraduate thesis, *Design of a Dual-Band Monopole Antenna for Wi-Fi and Bluetooth Applications*, completed in the AI Communication Engineering program at Zhejiang Gongshang University.
 
+`me-designed-page.html` is a separate, simplified personal webpage with a GitHub-inspired vertical layout, Times New Roman typography, and a linked table of contents.
+
+Published page: https://d0351.github.io/EEEE3134SYXiang/me-designed-page.html
+
 ## Preview locally
 
 Open `ai-generated-page.html` in a browser, or run a local server:
