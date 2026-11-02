@@ -314,39 +314,6 @@
       line-height: 1.75;
     }
 
-    .quick-facts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 1px solid var(--border-soft);
-      background: #fcfbf9;
-    }
-
-    .quick-facts div {
-      padding: 19px 52px 20px;
-    }
-
-    .quick-facts div:nth-child(odd) {
-      border-right: 1px solid var(--border-soft);
-    }
-
-    .quick-facts div:nth-child(-n + 2) {
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .quick-facts dt {
-      color: var(--brown);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .quick-facts dd {
-      margin-top: 4px;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
     /* Contents */
 
     .contents-card {
@@ -356,10 +323,6 @@
     }
 
     .contents-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 20px;
       padding-bottom: 15px;
       border-bottom: 1px solid var(--border-soft);
     }
@@ -369,42 +332,30 @@
       font-weight: 400;
     }
 
-    .contents-head span {
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
     .contents-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 520px;
     }
 
-    .contents-list li:nth-child(odd) {
-      border-right: 1px solid var(--border-soft);
-    }
-
-    .contents-list li:nth-child(-n + 2) {
+    .contents-list li {
       border-bottom: 1px solid var(--border-soft);
+    }
+
+    .contents-list li:last-child {
+      border-bottom: 0;
     }
 
     .contents-list a {
       display: flex;
-      min-height: 57px;
+      min-height: 45px;
       align-items: center;
       gap: 14px;
-      padding: 10px 18px;
-      transition: background-color 160ms ease, color 160ms ease;
-    }
-
-    .contents-list li:nth-child(odd) a {
-      padding-left: 4px;
+      padding: 7px 0;
+      transition: color 160ms ease;
     }
 
     .contents-list a:hover,
     .contents-list a.is-current {
-      background: var(--warm);
       color: var(--brown-dark);
     }
 
@@ -1030,22 +981,6 @@
         font-size: 16px;
       }
 
-      .quick-facts {
-        grid-template-columns: 1fr;
-      }
-
-      .quick-facts div {
-        padding: 13px 24px;
-      }
-
-      .quick-facts div:nth-child(odd) {
-        border-right: 0;
-      }
-
-      .quick-facts div:not(:last-child) {
-        border-bottom: 1px solid var(--border-soft);
-      }
-
       .contents-card {
         margin-top: 26px;
         padding: 23px 24px;
@@ -1055,16 +990,8 @@
         grid-template-columns: 1fr;
       }
 
-      .contents-list li:nth-child(odd) {
-        border-right: 0;
-      }
-
       .contents-list li:not(:last-child) {
         border-bottom: 1px solid var(--border-soft);
-      }
-
-      .contents-list li:nth-child(odd) a {
-        padding-left: 7px;
       }
 
       .section-card {
@@ -1219,33 +1146,13 @@
         </div>
 
         <p class="profile-summary">
-          I am an engineering student interested in the connection between software, embedded hardware, and <em class="keyword">wireless communication</em>. My current work focuses on practical electronic systems, with a particular interest in <em class="keyword">antenna design</em> and communication technologies.
+          I am an undergraduate engineering student focused on <em class="keyword">wireless communication</em>, embedded systems, and <em class="keyword">antenna design</em>.
         </p>
-
-        <dl class="quick-facts">
-          <div>
-            <dt>Focus</dt>
-            <dd>Wireless communication and embedded systems</dd>
-          </div>
-          <div>
-            <dt>Core skills</dt>
-            <dd>C programming and embedded development</dd>
-          </div>
-          <div>
-            <dt>Graduation project</dt>
-            <dd>Dual-band antenna design at 2.4 GHz and 5 GHz</dd>
-          </div>
-          <div>
-            <dt>Contact</dt>
-            <dd><a href="mailto:siyuxiang57@163.com">siyuxiang57@163.com</a></dd>
-          </div>
-        </dl>
       </section>
 
       <nav class="contents-card" aria-labelledby="contents-title">
         <div class="contents-head">
           <h2 id="contents-title">Contents</h2>
-          <span>On this page</span>
         </div>
         <ol class="contents-list">
           <li><a href="#about"><b>01</b><strong>About me</strong></a></li>
