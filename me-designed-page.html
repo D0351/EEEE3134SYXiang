@@ -23,7 +23,7 @@
       --muted: #65605b;
       --border: #d8d5d0;
       --border-soft: #e8e5e0;
-      --max-width: 920px;
+      --max-width: 860px;
       --serif: "Times New Roman", Times, serif;
     }
 
@@ -199,7 +199,7 @@
     /* Main profile */
 
     main {
-      padding: 38px 0 0;
+      padding: 72px 0 0;
     }
 
     .profile-card,
@@ -217,8 +217,8 @@
     .profile-main {
       display: grid;
       grid-template-columns: 136px minmax(0, 1fr);
-      gap: 30px;
-      padding: 38px 40px 32px;
+      gap: 34px;
+      padding: 52px 52px 40px;
       align-items: center;
     }
 
@@ -273,6 +273,32 @@
       line-height: 1.35;
     }
 
+    .keyword {
+      color: #705b47;
+      font-family: Baskerville, "Palatino Linotype", Palatino, Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      animation: keyword-tone 9s ease-in-out infinite alternate;
+    }
+
+    .keyword:nth-of-type(2) {
+      animation-delay: -3s;
+    }
+
+    .keyword:nth-of-type(3) {
+      animation-delay: -6s;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    @keyframes keyword-tone {
+      0% { color: #665140; }
+      55% { color: #9a7c5b; }
+      100% { color: #745c45; }
+    }
+
     .profile-institution {
       max-width: 650px;
       margin-top: 8px;
@@ -282,7 +308,7 @@
 
     .profile-summary {
       max-width: 740px;
-      padding: 0 40px 33px;
+      padding: 0 52px 44px;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.75;
@@ -296,7 +322,7 @@
     }
 
     .quick-facts div {
-      padding: 16px 40px 17px;
+      padding: 19px 52px 20px;
     }
 
     .quick-facts div:nth-child(odd) {
@@ -324,8 +350,8 @@
     /* Contents */
 
     .contents-card {
-      margin-top: 22px;
-      padding: 28px 32px 26px;
+      margin-top: 36px;
+      padding: 32px 40px 30px;
       background: var(--paper);
     }
 
@@ -397,9 +423,12 @@
     /* Sections */
 
     .section-card {
-      margin-top: 22px;
-      padding: 38px 40px 42px;
-      scroll-margin-top: 90px;
+      margin-top: 78px;
+      padding: 0 10px 28px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      scroll-margin-top: 100px;
     }
 
     .section-heading {
@@ -407,7 +436,7 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 24px;
-      padding-bottom: 18px;
+      padding-bottom: 25px;
       border-bottom: 1px solid var(--border-soft);
     }
 
@@ -427,7 +456,7 @@
     }
 
     .section-content {
-      padding-top: 24px;
+      padding-top: 34px;
     }
 
     .lead {
@@ -523,73 +552,169 @@
 
     /* Project */
 
-    .project-panel {
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project-card {
       overflow: hidden;
       border: 1px solid var(--warm-deep);
-      border-radius: 7px;
-      background: linear-gradient(135deg, #fbfaf7, #f3eee7);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.56);
+      transition: background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
     }
 
-    .project-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 28px 30px 22px;
-      border-bottom: 1px solid var(--warm-deep);
+    .project-card[open] {
+      border-color: var(--brown);
+      background: var(--white);
+      box-shadow: 0 18px 45px rgba(61, 50, 40, 0.07);
     }
 
-    .project-top h3 {
-      max-width: 650px;
-      font-size: clamp(1.55rem, 3.2vw, 2.1rem);
-      font-weight: 400;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
+    .project-card > summary {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      padding: 31px 32px;
+      cursor: pointer;
+      list-style: none;
+      transition: background-color 180ms ease;
     }
 
-    .project-tag {
-      padding: 5px 10px;
-      border: 1px solid var(--warm-deep);
-      border-radius: 999px;
-      color: var(--brown-dark);
-      font-size: 12px;
-      letter-spacing: 0.06em;
+    .project-card > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .project-card > summary:hover {
+      background: rgba(238, 231, 220, 0.45);
+    }
+
+    .project-card > summary:focus-visible {
+      outline-offset: -4px;
+    }
+
+    .project-number {
+      color: var(--brown);
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .project-summary-content {
+      display: grid;
+      gap: 7px;
+    }
+
+    .project-meta {
+      color: var(--brown);
+      font-size: 11px;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
+    }
+
+    .project-title {
+      max-width: 610px;
+      font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+      line-height: 1.3;
+    }
+
+    .project-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
       white-space: nowrap;
     }
 
-    .project-body {
+    .project-toggle svg {
+      width: 22px;
+      height: 22px;
+      padding: 5px;
+      border: 1px solid var(--warm-deep);
+      border-radius: 50%;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-width: 1.2;
+      transition: transform 240ms ease, border-color 240ms ease;
+    }
+
+    .project-card[open] .project-toggle svg {
+      border-color: var(--brown);
+      transform: rotate(45deg);
+    }
+
+    .project-details {
+      border-top: 1px solid var(--warm-deep);
+      background:
+        linear-gradient(to right, rgba(81, 70, 59, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(81, 70, 59, 0.035) 1px, transparent 1px),
+        #fbfaf7;
+      background-size: 36px 36px;
+    }
+
+    .project-details-inner {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+      gap: 42px;
+      padding: 34px 32px 38px;
     }
 
-    .project-description {
-      padding: 26px 30px 30px;
-    }
-
-    .project-description p {
+    .project-overview > p {
       color: var(--muted);
       font-size: 16px;
       line-height: 1.72;
     }
 
-    .project-description ul {
+    .project-facts {
       display: grid;
-      gap: 8px;
-      margin: 17px 0 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-facts div {
+      padding: 13px 12px 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-facts div:nth-child(even) {
+      padding-left: 15px;
+      border-left: 1px solid var(--border);
+    }
+
+    .project-facts dt {
+      color: var(--brown);
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .project-facts dd {
+      margin-top: 3px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .project-points {
+      display: grid;
+      gap: 7px;
+      margin: 22px 0 0;
       padding: 0;
       list-style: none;
     }
 
-    .project-description li {
+    .project-points li {
       position: relative;
       padding-left: 17px;
+      color: var(--muted);
       font-size: 15px;
     }
 
-    .project-description li::before {
+    .project-points li::before {
       position: absolute;
-      top: 0.72em;
+      top: 0.73em;
       left: 0;
       width: 6px;
       height: 1px;
@@ -599,16 +724,13 @@
 
     .frequency-panel {
       display: flex;
-      min-height: 280px;
+      min-height: 265px;
       flex-direction: column;
       justify-content: center;
-      padding: 30px;
-      border-left: 1px solid var(--warm-deep);
-      background:
-        linear-gradient(to right, rgba(81, 70, 59, 0.045) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(81, 70, 59, 0.045) 1px, transparent 1px),
-        rgba(255, 255, 255, 0.34);
-      background-size: 32px 32px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.58);
     }
 
     .frequency-title {
@@ -877,7 +999,7 @@
       }
 
       main {
-        padding-top: 22px;
+        padding-top: 34px;
       }
 
       .profile-main {
@@ -925,6 +1047,7 @@
       }
 
       .contents-card {
+        margin-top: 26px;
         padding: 23px 24px;
       }
 
@@ -945,7 +1068,8 @@
       }
 
       .section-card {
-        padding: 28px 24px 32px;
+        margin-top: 58px;
+        padding: 0 2px 20px;
         scroll-margin-top: 72px;
       }
 
@@ -971,29 +1095,27 @@
         gap: 7px;
       }
 
-      .project-top {
-        display: block;
-        padding: 23px 24px 18px;
+      .project-card > summary {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 14px;
+        padding: 24px 22px;
       }
 
-      .project-tag {
-        display: inline-block;
-        margin-top: 13px;
+      .project-toggle {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 3px;
       }
 
-      .project-body {
+      .project-details-inner {
         grid-template-columns: 1fr;
-      }
-
-      .project-description {
-        padding: 23px 24px 26px;
+        gap: 24px;
+        padding: 26px 22px 28px;
       }
 
       .frequency-panel {
         min-height: 230px;
         padding: 24px;
-        border-top: 1px solid var(--warm-deep);
-        border-left: 0;
       }
 
       .skill-row {
@@ -1054,6 +1176,11 @@
       *::after {
         transition-duration: 0.01ms !important;
       }
+
+      .keyword {
+        color: #705b47;
+        animation: none;
+      }
     }
   </style>
 </head>
@@ -1069,7 +1196,7 @@
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#about">About</a>
         <a href="#education">Education</a>
-        <a href="#project">Project</a>
+        <a href="#project">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1086,13 +1213,13 @@
           <div class="profile-copy">
             <p class="eyebrow">Personal webpage</p>
             <h1 id="profile-name">Siyu Xiang</h1>
-            <p class="profile-role">Undergraduate in Electronic Communications and Computer Engineering</p>
+            <p class="profile-role">Undergraduate in <em class="keyword">Electronic Communications</em> and Computer Engineering</p>
             <p class="profile-institution">University of Nottingham Ningbo China · Communication Engineering at Zhejiang Gongshang University</p>
           </div>
         </div>
 
         <p class="profile-summary">
-          I am an engineering student interested in the connection between software, embedded hardware, and wireless communication. My current work focuses on practical electronic systems, with a particular interest in antenna design and communication technologies.
+          I am an engineering student interested in the connection between software, embedded hardware, and <em class="keyword">wireless communication</em>. My current work focuses on practical electronic systems, with a particular interest in <em class="keyword">antenna design</em> and communication technologies.
         </p>
 
         <dl class="quick-facts">
@@ -1123,7 +1250,7 @@
         <ol class="contents-list">
           <li><a href="#about"><b>01</b><strong>About me</strong></a></li>
           <li><a href="#education"><b>02</b><strong>Education</strong></a></li>
-          <li><a href="#project"><b>03</b><strong>Graduation project</strong></a></li>
+          <li><a href="#project"><b>03</b><strong>Projects</strong></a></li>
           <li><a href="#skills"><b>04</b><strong>Skills &amp; expertise</strong></a></li>
           <li><a href="#contact"><b>05</b><strong>Contact</strong></a></li>
         </ol>
@@ -1190,39 +1317,72 @@
 
       <section class="section-card" id="project" aria-labelledby="project-title">
         <div class="section-heading">
-          <h2 id="project-title">Graduation project</h2>
+          <h2 id="project-title">Projects</h2>
           <span>03 / Selected work</span>
         </div>
         <div class="section-content">
-          <article class="project-panel">
-            <div class="project-top">
-              <h3>Design of a dual-band antenna for 2.4 GHz and 5 GHz applications</h3>
-              <span class="project-tag">Antenna design</span>
-            </div>
-            <div class="project-body">
-              <div class="project-description">
-                <p>
-                  My undergraduate graduation project focuses on the design of a dual-band antenna operating at 2.4 GHz and 5 GHz. The project connects communication engineering principles with the practical design of a wireless component.
-                </p>
-                <ul>
-                  <li>Dual-band operation for common wireless frequency ranges</li>
-                  <li>Antenna design within a communication engineering context</li>
-                  <li>Attention to frequency behavior and practical device requirements</li>
-                </ul>
-              </div>
-              <div class="frequency-panel" aria-label="Project frequency bands">
-                <p class="frequency-title">Design frequency bands</p>
-                <div class="frequency-line" aria-hidden="true">
-                  <span></span>
-                  <span></span>
+          <div class="project-list">
+            <details class="project-card">
+              <summary>
+                <span class="project-number">01</span>
+                <span class="project-summary-content">
+                  <span class="project-meta">Graduation project · Antenna design</span>
+                  <span class="project-title">Design of a <em class="keyword">dual-band antenna</em> for <span class="nowrap">2.4 GHz</span> and <span class="nowrap">5 GHz</span> applications</span>
+                </span>
+                <span class="project-toggle">
+                  <span class="toggle-label">Open project</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M5 10h10M10 5v10"/>
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="project-details">
+                <div class="project-details-inner">
+                  <div class="project-overview">
+                    <p>
+                      My undergraduate graduation project focuses on the design of a dual-band antenna operating at 2.4 GHz and 5 GHz. The project connects communication engineering principles with the practical design of a wireless component.
+                    </p>
+                    <dl class="project-facts">
+                      <div>
+                        <dt>Project type</dt>
+                        <dd>Undergraduate graduation project</dd>
+                      </div>
+                      <div>
+                        <dt>Field</dt>
+                        <dd>Communication engineering</dd>
+                      </div>
+                      <div>
+                        <dt>Frequency bands</dt>
+                        <dd>2.4 GHz / 5 GHz</dd>
+                      </div>
+                      <div>
+                        <dt>Design focus</dt>
+                        <dd>Dual-band antenna</dd>
+                      </div>
+                    </dl>
+                    <ul class="project-points">
+                      <li>Dual-band operation for common wireless frequency ranges</li>
+                      <li>Antenna design within a communication engineering context</li>
+                      <li>Attention to frequency behavior and practical device requirements</li>
+                    </ul>
+                  </div>
+
+                  <div class="frequency-panel" aria-label="Project frequency bands">
+                    <p class="frequency-title">Design frequency bands</p>
+                    <div class="frequency-line" aria-hidden="true">
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="frequency-values">
+                      <span><strong>2.4 GHz</strong><small>Lower band</small></span>
+                      <span><strong>5 GHz</strong><small>Upper band</small></span>
+                    </div>
+                  </div>
                 </div>
-                <div class="frequency-values">
-                  <span><strong>2.4 GHz</strong><small>Lower band</small></span>
-                  <span><strong>5 GHz</strong><small>Upper band</small></span>
-                </div>
               </div>
-            </div>
-          </article>
+            </details>
+          </div>
         </div>
       </section>
 
@@ -1301,10 +1461,27 @@
       const sections = contentsLinks
         .map((link) => document.querySelector(link.getAttribute("href")))
         .filter(Boolean);
+      const projectCards = [...document.querySelectorAll(".project-card")];
       const yearTarget = document.querySelector("#current-year");
       let toastTimer;
 
       yearTarget.textContent = String(new Date().getFullYear());
+
+      projectCards.forEach((card) => {
+        const label = card.querySelector(".toggle-label");
+
+        card.addEventListener("toggle", () => {
+          label.textContent = card.open ? "Close project" : "Open project";
+
+          if (card.open) {
+            projectCards.forEach((otherCard) => {
+              if (otherCard !== card) {
+                otherCard.open = false;
+              }
+            });
+          }
+        });
+      });
 
       const showToast = (message) => {
         toast.textContent = message;
